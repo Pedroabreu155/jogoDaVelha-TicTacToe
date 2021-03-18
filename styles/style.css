@@ -1,3 +1,17 @@
+
+body{
+    text-align: center;
+}
+
 h1{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.square{
+    width: 6.25rem;
+    height: 6.25rem;
+    background-color: rgb(160, 97, 97);
+    border: 1px solid darkgray;
+    display: inline-block;
 }
