@@ -11,6 +11,9 @@ let symbols = ["o", "x"];
 //game functions
 
 function handleMove(position) {
+    // this if is to control the squares
+    // you cannot put same symbol on same square
+  if(board[position] == '' ){
   board[position] = symbols[playerTime];
 
   if (playerTime == 0) {
@@ -18,4 +21,6 @@ function handleMove(position) {
   } else {
     playerTime = 0;
   }
+
+}
 }
