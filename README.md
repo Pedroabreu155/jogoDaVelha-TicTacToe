@@ -14,3 +14,7 @@ Esse game é feito utilizando as seguintes techs:
 
 Para utilizá-lo basta baixar a pasta .zip ou clonar o repositório em sua máquina, após isso abra o arquivo index.html e bom jogo! :top:
 
+
+
+Desenvolvido por: Pedro Abreu #theFutureIsOpenSource
+
