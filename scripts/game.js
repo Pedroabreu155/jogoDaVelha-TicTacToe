@@ -2,13 +2,30 @@
 // AND SERVICES RULES
 
 //NAMING VARIABLES
+
+//state variables
 let board = ["", "", "", "", "", "", "", "", ""];
 
 let playerTime = 0;
 
+let gameOver = false;
+
+//players and times variables
+
 let symbols = ["o", "x"];
 
-let gameOver = false;
+let winStates = [
+  //this sub arrays presents the position on the board that
+  //refers to a win on the game rules
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
 
 //game functions
 
@@ -30,11 +47,7 @@ function handleMove(position) {
     // the game only continues if game over is  false
     if (!gameOver) {
       //changing the player time
-      if (playerTime == 0) {
-        playerTime = 1;
-      } else {
-        playerTime = 0;
-      }
+      playerTime = playerTime == 0 ? 1 : 0;
     }
   }
 
@@ -42,19 +55,6 @@ function handleMove(position) {
 }
 
 function isWin() {
-  let winStates = [
-    //this sub arrays presents the position on the board that
-    //refers to a win on the game rules
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-
   for (let i = 0; i < winStates.length; i++) {
     //reading the wins alternatives
     let sequence = winStates[i];

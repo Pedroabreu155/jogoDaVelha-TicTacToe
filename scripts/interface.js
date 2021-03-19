@@ -16,22 +16,43 @@ function handleClick(event) {
   let square = event.target;
   let position = square.id;
 
-  handleMove(position);
+  if(handleMove(position)){
 
-  updateSquares();
+    //fixing the alert before the last playertime
+
+    setTimeout(()=>{
+      alert("O jogo acabou!")
+
+    }, 30)
+    
+
+  }
+
+  updateSquare(position);
+
+
 }
 
-function updateSquares() {
-    let squares = document.querySelectorAll(".square");
+function updateSquare(position){
+  let square = document.getElementById(position.toString())
+  let symbol = board[position]
+  square.innerHTML = `<div class= '${symbol}'></div>`
 
-  squares.forEach((square) => {
-        let position = square.id
-        let symbol = board[position]
-
-        if(symbol != ''){
-            square.innerHTML = `<div class= '${symbol}'></div>`
-        }
-
-
-    });
 }
+
+
+
+// function updateSquares() {
+//     let squares = document.querySelectorAll(".square");
+
+//   squares.forEach((square) => {
+//         let position = square.id
+//         let symbol = board[position]
+
+//         if(symbol != ''){
+//             square.innerHTML = `<div class= '${symbol}'></div>`
+//         }
+
+
+//     });
+// }
